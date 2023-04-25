@@ -4,14 +4,19 @@ import math
 import random
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
 import tensorflow as tf 
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.models import load_model
-from tensorflow.keras.layers import LSTM,GRU,Dense, Dropout, Activation
-from tensorflow.keras.callbacks import EarlyStopping
-from tensorflow.keras.utils import plot_model
+from tensorflow import keras
+from keras.layers import Dense,LSTM,GRU,Dropout,Activation
+from keras.models import Sequential, load_model
+from keras.utils import plot_model
+# from tensorflow.keras.models import Sequential
+# from tensorflow.keras.models import load_model
+# from tensorflow.keras.layers import LSTM,GRU,Dense, Dropout, Activation
+# from tensorflow.keras.callbacks import EarlyStopping
+# from tensorflow.keras.utils import plot_model
 import sklearn.metrics as metrics
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+from keras.callbacks import  EarlyStopping
 
 # fix random seed for reproducibility
 np.random.seed(1)

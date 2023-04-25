@@ -1,8 +1,11 @@
 import flask
-from tensorflow.keras.models import load_model
+from tensorflow import keras
+
+from keras.models import load_model
+import random 
 import pandas as pd 
 import numpy as np
-from sklearn.preprocessing import StandardScaler, MinMaxScaler
+from sklearn.preprocessing import MinMaxScaler
 import datetime
 app = flask.Flask(__name__, template_folder='templates')
 @app.route('/', methods=['GET', 'POST'])
@@ -77,10 +80,10 @@ def main():
         index = index[0]
      
     
-        index2 = index2[0]
+        # index2 = index2[0]
 
         pred_GRU = predicted_GRU[index].astype(int) 
-        pred_GRU2 = predicted_GRU[index2].astype(int)
+        pred_GRU2 = predicted_GRU[index].astype(int)
 
         pred_tl=trafficLevel(pred_GRU)
         pred_cf_tl=trafficLevel(pred_GRU2)
@@ -92,12 +95,15 @@ def main():
 
 @app.route('/login')
 def login():
-    return flask.render_template("./login/index.html")
+    return flask.render_template("./login/login.html")
     
 @app.route('/admin')
 def admin():
     return flask.render_template("./admin/index.html")
         
 if __name__ == '__main__':
-   
+    app.debug = True
     app.run(host='0.0.0.0')    
+
+
+

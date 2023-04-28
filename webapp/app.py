@@ -27,7 +27,7 @@ def main():
 
     def getTimeAndDate(date,time):
       availDates=["4","7","8","9","10","11"]
-      dateList=date.split("/")
+      dateList=date.split("-")
       if(7<=int(dateList[0])<=11):
         newDate=int(dateList[0])
       else:
@@ -39,7 +39,7 @@ def main():
 
     def getCurrentTimestmap():
       currentDT = datetime.datetime.now()
-      currentDate = str(currentDT.day)+"/"+ str(currentDT.month) +"/" + str(currentDT.year)
+      currentDate = str(currentDT.day)+"-"+ str(currentDT.month) +"-" + str(currentDT.year)
       timeList=str(currentDT.time()).split(":")
       presenTimeStamp=currentDate+" "+timeList[0]+":"+timeList[1].zfill(2)
       print(presenTimeStamp)

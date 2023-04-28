@@ -77,13 +77,13 @@
         }
 
         .jumbotron.text-center {
-            background-image: url("{{url_for('static', filename='re1.jpg')}}");
-            padding: 0%;
+           padding: 0%;
         }
 
         body {
-            background-image: url("{{url_for('static', filename='re2.jpg')}}");
-            object-fit: cover;
+            padding-left: 5%;
+            background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(67,67,162,1) 0%, rgba(77,184,205,1) 63%);
             /* background-size: 100%; */
             /* background-repeat: no-repeat ; */
 
@@ -116,7 +116,7 @@
             </li>
         </ul>
     </a>
-    <div class="jumbotron text-center">
+    <div class="text-center">
         <a>
             <ul class="wrapper" style="float:right;">
                 <li class="icon admin" onclick="toggleNotifi()">
@@ -128,7 +128,7 @@
         </a>
 
         <div class="col-4 mx-auto text-center">
-            <img src="{{url_for('static', filename='logo.png')}}" class="rounded-circle" width="214" height="146">
+            <img src="{{url_for('static', filename='traffic-jam.png')}}" class="rounded-circle" width="150" height="146">
         </div>
         <br>
 
@@ -151,12 +151,12 @@
             <form action="{{ url_for('main') }}" method="POST" class="needs-validation" novalidate>
                 <div class="form-group">
                     <label>Enter Date:</label>
-                    <input type="text" class="form-control" placeholder="dd/m/yyyy" name="date" required>
+                    <input type="date" class="form-control" name="date" required>
                     <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
                 <div class="form-group">
                     <label>Enter Time:</label>
-                    <input type="text" class="form-control" placeholder="hh:mm" name="time" required>
+                    <input type="time" class="form-control" name="time" required>
                     <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
                 <button type="submit" class="btn btn-outline-secondary">Predict</button><br>

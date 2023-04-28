@@ -80,10 +80,12 @@ def main():
         index = index[0]
      
     
-        # index2 = index2[0]
+       
+        index2 = x2["Flow (Veh/5 Minutes)"].index
+        index2 = index2[0]
 
         pred_GRU = predicted_GRU[index].astype(int) 
-        pred_GRU2 = predicted_GRU[index].astype(int)
+        pred_GRU2 = predicted_GRU[index2].astype(int)
 
         pred_tl=trafficLevel(pred_GRU)
         pred_cf_tl=trafficLevel(pred_GRU2)
